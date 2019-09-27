@@ -1,4 +1,4 @@
-## Game of Three Assignment
+# Game of Three Assignment
 
 This project aim to play a game which is developed on distributed systems. Those systems are designed with 
 microservices,CQRS,DDD,event sourcing and websocket. In this project, four modules runs separately each other.
@@ -7,7 +7,7 @@ This project developed with Spring Boot, Kafka, Axon (which is very powerful fra
 Java 8 (which is required),Mongo DB(whis is for event store and CRUD) and Euraka Server.For UI Bootstrap,SockJS,Stomp,Thymleaf,
 Jquery were used.
 
-## How to Play
+# How to Play
 
 When a player starts, it incepts a random (whole) number and sends it to the second
 player as an approach of starting the game. The receiving player can now always choose
@@ -24,13 +24,16 @@ http://localhost:8088/swagger-ui.html (Query Project)
 http://localhost:8087/swagger-ui.html (Command Project)
 
 
-## Installation
+# Installation
 
-# Requirements
+## Requirements
 
 JDK8 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
 Kafka https://kafka.apache.org/quickstart
+
 Mongo DB https://docs.mongodb.com/manual/installation/
+
 Maven https://maven.apache.org/install.html
 
 ## How to build
