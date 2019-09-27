@@ -1,9 +1,9 @@
 # Game of Three Assignment
 
-This project aim to play a game which is developed on distributed systems. Those systems are designed with 
-microservices,CQRS,DDD,event sourcing and websocket. In this project, four modules runs separately each other.
+This project aims to play a game which is developed based on distributed systems. Those systems are designed through 
+microservices,CQRS,DDD,event sourcing and websocket. In this project, four modules run separately from each other.
 
-This project developed with Spring Boot, Kafka, Axon (which is very powerful framework for developing DDD and CQRS projects),
+The project is developed through Spring Boot, Kafka, Axon (which is very powerful framework for developing DDD and CQRS projects),
 Java 8 (which is required),Mongo DB(whis is for event store and CRUD) and Euraka Server.For UI Bootstrap,SockJS,Stomp,Thymleaf,
 Jquery were used.
 
@@ -17,7 +17,7 @@ The same rules are applied until one player reaches the number 1(after the divis
 
 Players can play the game on a browser which is located on http://localhost:8080/
 
-Alternatively, this project can be play on a Swagger UI(actually,Swagger is a documentation UI for REST API) which those are located on
+Alternatively, this project can be played on a Swagger UI(actually,Swagger is a documentation UI for REST API) which those are located on
 
 (Query Project) http://localhost:8088/swagger-ui.html 
 
