@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<head th:replace="common/header :: head">
+</head>
+
+<!-- Add additional custom css here - START -->
+
+<link th:href="@{css/signin.css}" rel="stylesheet" media="screen" />
+
+<!-- Add additional custom css here - END -->
+
+</head>
+<body>
+
+	<div class="container">
+		<h1>Games</h1>
+		<div>
+			<table id="gameTable" class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Name</th>
+						<th scope="col">Number</th>
+						<th scope="col">Creator</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr th:each="game, rowStat: ${games}" scope="row" class="page-item">
+
+						<td th:text="${game.id}" th:value="${game.id}" />
+						<td th:text="${game.name}" th:value="${game.name}" />
+						<td th:text="${game.number}" th:value="${game.number}" />
+						<td th:text="${game.creator}" th:value="${game.creator}" />
+						<td text="Join"><a
+							th:href="@{/join?gameId=__${game.id}__&userId=__${userId}__&creator=__${game.creator}__&status=__${game.gameStatus}__&number=__${game.number}__}"
+							class="btn btn-primary">join</a></td>
+					</tr>
+
+				</tbody>
+			</table>
+			<form method="POST" th:action="@{/createGame}" action="#">
+				<input type="hidden" name="userId" id="userId" th:value="${userId}" />
+				<button type="submit" name="submit" value="value"
+					class="btn btn-primary">Create Game</button>
+			</form>
+
+			<div th:if="${message}">
+				<div class="alert alert-warning" role="alert">
+					<div th:text="${message}" />
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+
+<div th:replace="common/footer :: footer"></div>
+<script src="/../js/game.js" th:src="@{../js/game.js}"></script>
+</html>

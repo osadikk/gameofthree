@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<head th:replace="common/header :: head"></head>
+
+<!-- Add additional custom css here - START -->
+
+<link th:href="@{css/signin.css}" rel="stylesheet" media="screen" />
+
+<!-- Add additional custom css here - END -->
+
+</head>
+<body>
+
+
+
+	<div class="container">
+
+
+
+		<form class="form-signin" name="loginForm" th:action="@{/games}"
+			action="#" method="POST">
+			<h2 class="form-signin-heading" align="center">Login</h2>
+			<label for="username" class="sr-only">UserName</label> <input
+				type="text" name="userId" id="userId" th:value="${userId}"
+				class="form-control" placeholder="Username" required="required"
+				autofocus="autofocus" />
+
+
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+		</form>
+
+		<div th:if="${message}">
+			<div class="alert alert-warning" role="alert">
+				<div th:text="${message}" />
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<head th:replace="common/header :: head">
+</head>
+
+<!-- Add additional custom css here - START -->
+
+<link th:href="@{css/signin.css}" rel="stylesheet" media="screen" />
+
+<!-- Add additional custom css here - END -->
+
+</head>
+<body>
+
+	<div class="container">
+		<h1>Play</h1>
+
+
+		<div class="form-row align-items-center">
+
+			<div class="col-sm-3 my-1">
+				<span class="badge badge-pill badge-primary">Number</span> <input
+					type="text" class="form-control" name="number" id="number" value=""
+					readonly />
+			</div>
+			<div class="col-sm-3 my-1">
+				<span class="badge badge-pill badge-primary">Adjusment</span> <input
+					type="number" class="form-control" min="-1" max="1" id="adj"
+					value=0>
+			</div>
+
+
+
+
+		</div>
+
+		<div class="form-row align-items-center">
+
+			<div id="startButtonDiv" th:if="(${creator} == ${userId})"
+				class="d-flex p-2 col-sm-2">
+
+				<button type="button" name="submit" value="value"
+					class="btn btn-primary btn-lg btn btn-primary btn-block"
+					onClick=start()>Start Game</button>
+
+			</div>
+
+			<div class="d-flex p-2 col-sm-2">
+				<button type="button" name="play" value="value"
+					class="btn btn-primary btn-lg btn btn-primary btn-block"
+					onClick=play()>Play</button>
+				,
+			</div>
+		</div>
+
+
+		<table id="messageTable" class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">Messages</th>
+				</tr>
+			</thead>
+
+			<tbody>
+			</tbody>
+
+		</table>
+	</div>
+
+
+	<input type="hidden" name="gameId" id="gameId" th:value="${gameId}" />
+	<input type="hidden" name="userId" id="userId" th:value="${userId}" />
+</body>
+<div th:replace="common/footer :: footer"></div>
+<script src="/../js/util.js" th:src="@{../js/util.js}"></script>
+</html>
