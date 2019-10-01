@@ -48,9 +48,20 @@ Make sure Mongo DB and Kafka(include Zookeper) servers are up. Database running 
 Kafka running on port 9092 and Zookeper on 2181(Default port).
 
 ```
-Start Zookeper zookeeper-server-start.bat ../../config/zookeeper.properties (under bin file)
+For Windows
+Start Zookeper zookeeper-server-start.bat ../../config/zookeeper.properties (under bin/windows file)
 
-Start Kafka kafka-server-start.bat ../../config/server.properties (under bin file)
+Start Kafka kafka-server-start.bat ../../config/server.properties (under bin/windows file)
+
+kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic game_topic
+
+
+For Linux
+zookeeper-server-start.sh config/zookeeper.properties (under bin file)
+
+kafka-server-start.sh config/server.properties (under bin file)
+
+kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic game_topic
 ```
 
 After all servers are up you can start all modules separately
